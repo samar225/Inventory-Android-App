@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Inventory App</string>
+    <string name="button">Add new data row</string>
+    <string name="print">Number of rows in inventory database table:</string>
+</resources>
