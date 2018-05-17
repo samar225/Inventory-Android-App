@@ -1,63 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?><!-- Layout for the editor -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/padding"
-    tools:context=".EditorActivity">
+    tools:context=".ViewActivity">
 
-    <!-- product name category -->
+    <!-- Overview category -->
     <LinearLayout
-        android:id="@+id/container_product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:padding="@dimen/padding"
         android:orientation="horizontal">
-    <!-- Label -->
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/hint_inventory_name"
-        android:textColor="@color/colorPrimary"/>
+
+        <!-- Label -->
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/padding"
+            android:text="@string/category_overview" />
 
         <!-- Input fields -->
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical"
-        android:paddingLeft="4dp">
-
-        <!-- Name field -->
-        <EditText
-            android:id="@+id/edit_inventory_name"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_inventory_name"
-            android:inputType="textCapWords" />
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
 
-    </LinearLayout>
+            <!-- Name field -->
+            <TextView
+                android:id="@+id/edit_inventory_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_inventory_name"
+                android:paddingTop="12dp" />
+
+        </LinearLayout>
     </LinearLayout>
 
 
     <!-- price category -->
     <LinearLayout
-        android:id="@+id/container_price"
+        android:id="@+id/container_measurement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding"
         android:orientation="horizontal">
 
         <!-- Label -->
         <TextView
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:textColor="@color/colorPrimary"
+            android:padding="@dimen/padding"
             android:text="@string/hint_inventory_price" />
 
         <!-- Input fields -->
@@ -68,7 +65,7 @@
             android:paddingLeft="4dp">
 
             <!-- price -->
-            <EditText
+            <TextView
                 android:id="@+id/edit_inventory_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,10 +75,8 @@
             <!-- Units  -->
             <TextView
                 android:id="@+id/label_weight_units"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:padding="@dimen/padding"
                 android:text="@string/unit_inventory_price" />
         </RelativeLayout>
     </LinearLayout>
@@ -90,29 +85,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/padding"
         android:orientation="horizontal">
         <!-- Label -->
         <TextView
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimary"
             android:text="@string/hint_inventory_quantity" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="12dp">
 
             <Button
                 android:id="@+id/decreament"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:text="-"
-                android:background="@color/colorAccent"/>
+                android:text="-" />
 
             <TextView
                 android:id="@+id/edit_inventory_quantity"
@@ -128,27 +120,25 @@
                 android:id="@+id/increament"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:text="+"
-                android:background="@color/colorAccent"/>
+                android:text="+" />
+
 
         </LinearLayout>
     </LinearLayout>
+
 
 
     <!-- supplier -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/padding">
+        android:orientation="horizontal">
 
         <!-- Label -->
         <TextView
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:textColor="@color/colorPrimary"
             android:text="@string/hint_inventory_supplier" />
 
         <!-- Input fields -->
@@ -156,27 +146,49 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-
             android:orientation="vertical"
             android:paddingLeft="4dp">
 
             <!-- Name field -->
-            <EditText
+            <TextView
                 android:id="@+id/edit_inventory_supplier_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_inventory_supplier_name"
-                android:inputType="textCapWords" />
+                android:paddingTop="12dp" />
 
-            <!-- phone number field -->
-            <EditText
+            <!-- Name field -->
+            <TextView
                 android:id="@+id/edit_inventory_supplier_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_inventory_supplier_phone_number"
-                android:inputType="phone" />
+                android:paddingTop="12dp" />
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/call"
+            android:text="Call Supplier"/>
+
+        <Button
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Edit Product" />
 
     </LinearLayout>
 
